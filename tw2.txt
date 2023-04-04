@@ -1,0 +1,51 @@
+mport java.util.Scanner;
+
+import java.lang.*;
+ class myTriangle{
+    double a,b,c;
+    
+     void getSides(){
+        System.out.println("Enter the 3 sides of the triangle");
+        Scanner sc=new Scanner(System.in);
+        a=sc.nextDouble();
+        b=sc.nextDouble();
+        c=sc.nextDouble();
+
+
+    }
+
+    void type(){
+        if( (a+b)>c && (b+c)>a && (c+a)>b){
+            if(a==b&&b==c&&c==a){
+                System.out.println("It is an quilateral triangle");
+
+            }
+            else if(a==b || b==c ||c==a){
+                System.out.println("It is an isoceles triangle");
+            }
+            else{
+                System.out.println("It is a scalene triangle");
+            }
+        }
+        else{
+            System.out.println("The triangle cannot be formed");
+            System.exit(0);
+        }
+    }
+    double area(){
+        double s=(a+b+c)/2;
+        double area=Math.sqrt(s*(s-a)(s-b)(s-c));
+        return area;
+        
+    }
+}
+public class tw2 {
+    public static void main(String[] args) {
+        myTriangle t=new myTriangle();
+        t.getSides();
+        t.type();
+        System.out.println("The area of the triangle is : "+t.area());
+        
+    }
+    
+}
